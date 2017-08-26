@@ -1,3 +1,6 @@
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<%= javascript_include_tag "signup" %>
+
 <div class="home-login" id="login-wrapper">
 	<h1>Log In</h1>
 	<p>Don't have an account? <a href="#" id="toggle-signup">Sign-up!</a></p>
@@ -8,7 +11,7 @@
 	</form>
 </div>
 
-<div class="home-signup" id="sigup-wrapper" hidden>
+<div class="home-signup" id="signup-wrapper" hidden>
 	<h1>Sign Up</h1>
 	<p><a href="#" id = "toggle-login">Log In</a></p>
 	<form action="POST" id="home-signup-form">
@@ -20,3 +23,4 @@
 		<input type="submit" value="Go Bham!">
 	</form>
 </div>
+</body>
