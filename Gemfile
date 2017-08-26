@@ -13,6 +13,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'faker'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'as-duration'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
