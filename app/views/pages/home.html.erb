@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-login" id="login-wrapper">
+	<h1>Log In</h1>
+	<p>Don't have an account? <a href="#" id="toggle-signup">Sign-up!</a></p>
+	<form action="POST" id="home-login-form">
+		Email address:<input name="email" type="text" required><br>
+		Password: <input name="password" type="password" required<br>
+		<input type="submit" value="Let's Go">
+	</form>
+</div>
+
+<div class="home-signup" id="sigup-wrapper" hidden>
+	<h1>Sign Up</h1>
+	<p><a href="#" id = "toggle-login">Log In</a></p>
+	<form action="POST" id="home-signup-form">
+		Email address:<input name="email" type="text" required><br>
+		First Name:<input name="first-name" type="text" required><br>
+		Last Name: <input name="last-name" type="text"><br>
+		Password: <input type="password" name="password"><br>
+		Confirm Password <input type="password" name="confirm-password"><br>
+		<input type="submit" value="Go Bham!">
+	</form>
+</div>
