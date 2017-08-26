@@ -8,6 +8,7 @@ class ActsController < ApplicationController
   end
 
   def edit
+  	@act = Act.find(params[:id])
   end
 
   def index

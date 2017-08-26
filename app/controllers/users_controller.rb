@@ -22,17 +22,17 @@ end
   #   @user = User.new(user_params)
   #   if @user.save
   #     log_in @user
-  #     flash[:success] = "Welcome to the Sample App!"
+  #     flash[:success] = "Welcome to Go Bham!"
   #     redirect_to @user
   #   else
   #     render 'new'
   #   end
   # end
 
- 
+
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :email, :encrypted_password,
                                    :password_confirmation)
     end
