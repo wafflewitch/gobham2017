@@ -79,11 +79,11 @@ color: gray;
 }
 
 .container{
-  margin:5%;
+  margin-bottom: 5%;
 }
 .card {
 	padding:  5%;
-  margin: 5%;
+  margin: 2%;
   border-left: 6px solid #ff7c06;
   background-color: lightgrey;
   border-radius: 5px;
@@ -106,5 +106,9 @@ color: gray;
 
 .card-description{
   font-size: 90%;
+}
+
+#map{
+  margin-bottom: 5%;
 }
  
