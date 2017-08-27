@@ -1,2 +1,24 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<h1>What do you wanna do?</h1>
+
+<div class="container">
+  <div class="row">
+
+    <!-- cards for displaying events -->
+
+    <% @events.each do |event| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-category"><%= event.name %></div>
+        <div class="card-description">
+          <p><%= event.desc %></p>
+        </div>
+        <img class="card-user" src="<%= event.user.photo %>">
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>

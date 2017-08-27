@@ -1,2 +1,27 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h1>Create an event!</h1>
+<div class="container text-center">
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :name %>
+    <%= f.input :desc %>
+    <%= f.input :location %>
+    <%= f.input :start_time, :class => "datetimepicker" %>
+    <%= f.input :end_time, :class => "datetimepicker" %>
+    <%= f.input :exp, :class => "datetimepicker" %>
+    <%= f.submit "Create", class: "btn" %>
+  <% end %>
+</div>
+
+<% content_for(:after_js) do %>
+  <div class="container">
+      <div class="row">
+          <div class='col-sm-6'>
+              <input type='text' class="form-control" class='datetimepicker'>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker').datetimepicker();
+              });
+          </script>
+      </div>
+  </div>
+<% end %>
