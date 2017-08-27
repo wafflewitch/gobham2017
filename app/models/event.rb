@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
 
   validates :user_id, presence: true
   validates :start_time, presence: true
