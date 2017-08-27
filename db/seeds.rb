@@ -14,6 +14,8 @@ WOMEN_IMG_URL = "https://res.cloudinary.com/wafflewitch/image/upload/v150003873"
 
 WOMEN_PICS = ["6/user16.jpg", "6/user15.jpg", "6/user14.jpg", "6/user13.png", "5/user10.jpg", "5/user11.jpg"]
 
+USER_IDS = []
+
 MEN_PICS.length.times do |pic|
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -22,8 +24,11 @@ MEN_PICS.length.times do |pic|
           last_name: last_name,
           email: "#{first_name}_#{last_name}@email.com",
           password: "coolcat",
-          photo: "#{MEN_IMG_URL}#{pic}"
+          photo: MEN_IMG_URL + MEN_PICS[pic]
           )
+  if user.save
+    USER_IDS << user[:id]
+  end
 end
 
 WOMEN_PICS.length.times do |pic|
@@ -34,16 +39,15 @@ WOMEN_PICS.length.times do |pic|
           last_name: last_name,
           email: "#{first_name}_#{last_name}@email.com",
           password: "coolcat",
-          photo: "#{WOMEN_IMG_URL}#{pic}"
+          photo: WOMEN_IMG_URL + WOMEN_PICS[pic]
           )
-end
-
-def random_id
-  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].sample
+  if user.save
+    USER_IDS << user[:id]
+  end
 end
 
 event_1 = Event.new(
-    user_id: random_id,
+    user_id: USER_IDS.sample,
     name: "Go play Breakout Birmingham!",
     desc: "Come play a fun puzzle game at Breakout Birmingham! I really want to try the haunted house one!",
     location: "2717 19th Place S, Homewood, AL",
@@ -51,7 +55,7 @@ event_1 = Event.new(
     end_time: Faker::Time.forward(2, :night),
     exp: Faker::Time.forward(2, :morning),
     max_members: 10,
-    members: [random_id, random_id, random_id]
+    members: [USER_IDS.sample, USER_IDS.sample, USER_IDS.sample]
     )
 event_1.save!
 
@@ -59,12 +63,12 @@ event_2 = Event.new(
     name: "Hike on Red Mountain Trail",
     desc: "Let's go hike on the beautiful Red Mountain! Remember your sunscreen and bugspray.",
     location: "2011 Frankfurt Dr, Birmingham, AL",
-    user_id: random_id,
+    user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
     exp: Faker::Time.forward(2, :morning),
     max_members: 10,
-    members: [random_id, random_id, random_id]
+    members: [USER_IDS.sample, USER_IDS.sample, USER_IDS.sample]
     )
 event_2.save!
 
@@ -72,12 +76,12 @@ event_3 = Event.new(
     name: "Grab drinks at Good People",
     desc: "Hey, let's grab a beer and chill, maybe walk around Rail Road Park.",
     location: "114 14th St S, Birmingham, AL",
-    user_id: random_id,
+    user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
     exp: Faker::Time.forward(2, :morning),
     max_members: 10,
-    members: [random_id, random_id, random_id]
+    members: [USER_IDS.sample, USER_IDS.sample, USER_IDS.sample]
     )
 event_3.save!
 
@@ -85,11 +89,11 @@ event_4 = Event.new(
     name: "Get Tea at BBCMS",
     desc: "Cute little tea and crystals shop! Delicious tea, coffee, milkshakes. Also interesting books.",
     location: "1620 Richard Arrington Jr Blvd S, Birmingham, AL",
-    user_id: random_id,
+    user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
     exp: Faker::Time.forward(2, :morning),
     max_members: 10,
-    members: [random_id, random_id, random_id]
+    members: [USER_IDS.sample, USER_IDS.sample, USER_IDS.sample]
     )
 event_4.save!
