@@ -8,4 +8,7 @@ $(document).ready(function() {
 		$('#signup-wrapper').hide();
 		$('#login-wrapper').show();
 	});
+	$("div[data-link]").click(function() {
+		window.location = this.data("link")
+	});
 });
