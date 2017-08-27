@@ -140,7 +140,13 @@ h3{
 }
 
 .events-current{
-  
+  margin: 5%;
+  border-radius: 5px;
+}
+
+.events-history{
+  margin: 5%;
+  border-radius: 5px;
 }
 
 table{
@@ -151,6 +157,7 @@ table{
 th{
  height: 50px;
  background-color: #ff7c06;
+ padding-right: 2%
 }
 
 td{
@@ -173,3 +180,9 @@ td{
   font-size: 120%
 }
 
+.middlecolumn {
+  border-left:  solid 6px #ff7c06;
+  padding: 2% 5% 5% 5%;
+  background: lightgray;
+  border-radius: 5px;
+}
