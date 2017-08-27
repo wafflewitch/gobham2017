@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Go Bham!"
