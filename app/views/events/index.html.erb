@@ -28,7 +28,7 @@
 
     <% @events.each do |event| %>
 
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-link="<%= event_path(event) %>">
       <div class="card">
           <img class="card-user avatar" src="<%= event.user.photo %>">
            <div class="card-category"><%= event.name %></div>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
 	$("tr[data-link]").click(function() {
-		window.location = this.data("link")
+		window.location = $(this).attr("data-link")
 	});
 });

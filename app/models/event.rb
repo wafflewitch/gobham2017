@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  attr_accessor :members
+
   belongs_to :user
 
   validates :user_id, presence: true
