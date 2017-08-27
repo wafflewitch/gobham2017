@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # get 'users/index'
 
+  get 'events/dashboard', to: 'events#dashboard'
+
   devise_for :users
 
   resources :users

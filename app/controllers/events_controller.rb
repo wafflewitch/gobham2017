@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :show ] # temporarily added :index :show
+  skip_before_action :authenticate_user!, only: [ :home, :index, :show, :dashboard ] # temporarily added :index :show
   before_action :set_event, only: [ :show, :edit, :update, :destroy ]
   before_action :set_user, only: [ :new, :create ] # temporarily removed :index
 
@@ -42,6 +42,11 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to user_path(@user)
+  end
+
+  def dashboard
+	  @current_events = Event.where(['end_time > ?', DateTime.now])
+	  @history_events = Event.where(['end_time < ?', DateTime.now])
   end
 
   private

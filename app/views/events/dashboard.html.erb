@@ -1,0 +1,56 @@
+<!DOCTYPE=HTML>
+<html>
+<head>
+	<%= stylesheet_link_tag 'base' %>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<%= javascript_include_tag "dashboard" %>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+	<h1>Dashboard</h1>
+
+	<div class="events-current">
+		<h2>Events coming up!</h2>
+		<table>
+			<tr>
+				<th>Event Name</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Location</th>
+				<th>Participants</th>
+				<% @current_events.each do |activity| %>
+					<tr class="current-event-row" data-link="<%= event_path(activity) %>">
+						<td><%= activity.name %></td>
+						<td><%= activity.start_time %></td>
+						<td><%= activity.end_time %></td>
+						<td><%= activity.address %></td>
+						<td><%= activity.members %></td>
+					</tr>
+				<% end %>
+		</table>
+	</div>
+
+	<div class="events-history">
+		<h2>Past Events</h2>
+		<table>
+			<tr>
+				<th>Event Name</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Location</th>
+				<th>Participants</th>
+				<% @history_events.each do |activity| %>
+					<tr class="current-event-row" data-link="<%= event_path(activity) %>">
+						<td><%= activity.name %></td>
+						<td><%= activity.start_time %></td>
+						<td><%= activity.end_time %></td>
+						<td><%= activity.address %></td>
+						<td><%= activity.members %></td>
+					</tr>
+				<% end %>
+		</table>
+	</div>
+</body>
+
+
+</html>
