@@ -8,14 +8,15 @@
   <%= simple_form_for @event do |f| %>
     <%= f.input :name %>
     <%= f.input :desc %>
-    <%= f.input :location %>
-    <%= f.input :start_time, :class => "datetimepicker" %>
-    <%= f.input :end_time, :class => "datetimepicker" %>
-    <%= f.input :exp, :class => "datetimepicker" %>
+    <%= f.input :address %>
+    <%= f.input :start_time %> <!-- took out :class => "datetimepicker" -->
+    <%= f.input :end_time %> <!-- took out :class => "datetimepicker" -->
+    <%= f.input :exp %> <!-- took out :class => "datetimepicker" -->
     <%= f.submit "Create", class: "btn" %>
   <% end %>
 </div>
 
+<!-- javascript that didn't work, are you surprised?!
 <% content_for(:after_js) do %>
   <div class="container">
       <div class="row">
@@ -30,4 +31,6 @@
       </div>
   </div>
 <% end %>
+-->
 </body>
+
