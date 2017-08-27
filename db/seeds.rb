@@ -50,7 +50,7 @@ event_1 = Event.new(
     user_id: USER_IDS.sample,
     name: "Go play Breakout Birmingham!",
     desc: "Come play a fun puzzle game at Breakout Birmingham! I really want to try the haunted house one!",
-    location: "2717 19th Place S, Homewood, AL",
+    address: "2717 19th Place S, Homewood, AL",
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
     exp: Faker::Time.forward(2, :morning),
@@ -62,7 +62,7 @@ event_1.save!
 event_2 = Event.new(
     name: "Hike on Red Mountain Trail",
     desc: "Let's go hike on the beautiful Red Mountain! Remember your sunscreen and bugspray.",
-    location: "2011 Frankfurt Dr, Birmingham, AL",
+    address: "2011 Frankfurt Dr, Birmingham, AL",
     user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
@@ -75,7 +75,7 @@ event_2.save!
 event_3 = Event.new(
     name: "Grab drinks at Good People",
     desc: "Hey, let's grab a beer and chill, maybe walk around Rail Road Park.",
-    location: "114 14th St S, Birmingham, AL",
+    address: "114 14th St S, Birmingham, AL",
     user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),
@@ -88,7 +88,7 @@ event_3.save!
 event_4 = Event.new(
     name: "Get Tea at BBCMS",
     desc: "Cute little tea and crystals shop! Delicious tea, coffee, milkshakes. Also interesting books.",
-    location: "1620 Richard Arrington Jr Blvd S, Birmingham, AL",
+    address: "1620 Richard Arrington Jr Blvd S, Birmingham, AL",
     user_id: USER_IDS.sample,
     start_time: Faker::Time.forward(2, :afternoon),
     end_time: Faker::Time.forward(2, :night),

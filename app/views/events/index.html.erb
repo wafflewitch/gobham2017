@@ -1,3 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%= stylesheet_link_tag 'base' %>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <%= javascript_include_tag "signup" %>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">goBham</a>
+    </div>
+  </div>
+</nav>
+
 <div class="container text-center"><h1>What do you wanna do?</h1></div>
 
 <div class="container">
@@ -7,14 +26,17 @@
 
     <% @events.each do |event| %>
 
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="card">
-        <div class="card-category"><%= event.name %></div>
-        <div class="card-description">
-          <p><%= event.desc %></p>
+          <img class="card-user avatar" src="<%= event.user.photo %>">
+           <div class="card-category"><%= event.name %></div>
+           <div class="card-description">
+            <p><%= event.desc %></p>
+            <a class="card-link" href="#" ></a>
+
+          
         </div>
-        <img class="card-user avatar" src="<%= event.user.photo %>">
-        <a class="card-link" href="#" ></a>
+        
       </div>
     </div>
 
@@ -22,3 +44,5 @@
 
   </div>
 </div>
+</body>
+</html>
