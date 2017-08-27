@@ -1,10 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%= stylesheet_link_tag 'base' %>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <%= javascript_include_tag "signup" %>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
 <head>
 	<%= stylesheet_link_tag 'base' %>
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
-<h1>Create an event!</h1>
+<h1 class="pagetitle">Create an event!</h1>
+
+
+
+
 <div class="container text-center">
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6 middlecolumn" >
+
+
   <%= simple_form_for @event do |f| %>
     <%= f.input :name %>
     <%= f.input :desc %>
@@ -14,23 +32,15 @@
     <%= f.input :exp %> <!-- took out :class => "datetimepicker" -->
     <%= f.submit "Create", class: "btn" %>
   <% end %>
+  </div>
+    <div class="col-lg-3"></div>
+
+  </div>
 </div>
 
-<!-- javascript that didn't work, are you surprised?!
-<% content_for(:after_js) do %>
-  <div class="container">
-      <div class="row">
-          <div class='col-sm-6'>
-              <input type='text' class="form-control" class='datetimepicker'>
-          </div>
-          <script type="text/javascript">
-              $(function () {
-                  $('#datetimepicker').datetimepicker();
-              });
-          </script>
-      </div>
-  </div>
-<% end %>
--->
+</div>
+
+
 </body>
+</html>
 
