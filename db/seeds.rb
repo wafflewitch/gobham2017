@@ -24,7 +24,7 @@ MEN_PICS.length.times do |pic|
           last_name: last_name,
           email: "#{first_name}_#{last_name}@email.com",
           password: "coolcat",
-          photo: MEN_IMG_URL + MEN_PICS[pic]
+          picture: MEN_IMG_URL + MEN_PICS[pic]
           )
   if user.save
     USER_IDS << user[:id]
@@ -39,7 +39,7 @@ WOMEN_PICS.length.times do |pic|
           last_name: last_name,
           email: "#{first_name}_#{last_name}@email.com",
           password: "coolcat",
-          photo: WOMEN_IMG_URL + WOMEN_PICS[pic]
+          picture: WOMEN_IMG_URL + WOMEN_PICS[pic]
           )
   if user.save
     USER_IDS << user[:id]
