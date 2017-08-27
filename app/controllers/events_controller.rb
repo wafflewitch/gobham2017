@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [ :home, :index ] # temporarily added :index
   before_action :set_event, only: [ :show, :edit, :update, :destroy ]
-  before_action :set_user, only: [ :new, :create, :index ]
+  before_action :set_user, only: [ :new, :create ] # temporarily removed :index
 
   def new
     @event = Event.new
@@ -57,6 +57,5 @@ class EventsController < ApplicationController
   def set_user
     @user = User.find(current_user[:id])
   end
-end
 
 end
