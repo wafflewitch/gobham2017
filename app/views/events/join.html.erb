@@ -1,0 +1,25 @@
+<!DOCTYPE=HTML>
+<html>
+<head>
+	<%= stylesheet_link_tag 'base' %>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<%= javascript_include_tag "dashboard" %>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+	<% if @current_events.blank? %>
+		<h1>No Current Events!</h1>
+		<p>Create an Event!</p>
+	<% else %> 
+
+		<h1>Join an Event!</h1>
+		<% @current_events.each do |activity| %>
+			<div class="join-event-div">
+				<h2><%= activity.name %></h2>
+				<span class="event-location"><%= activity.address %>
+				<p class="event-description"><%= activity.desc %></p>
+				<span><%= activity.members %></span>
+			</div>
+		<% end %>
+	<% end %>
+</body>

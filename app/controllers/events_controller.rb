@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :show, :dashboard ] # temporarily added :index :show
+  skip_before_action :authenticate_user!, only: [ :home, :index, :show, :dashboard, :join ] # temporarily added :index :show
   before_action :set_event, only: [ :show, :edit, :update, :destroy ]
   before_action :set_user, only: [ :new, :create ] # temporarily removed :index
 
@@ -47,6 +47,10 @@ class EventsController < ApplicationController
   def dashboard
 	  @current_events = Event.where(['end_time > ?', DateTime.now])
 	  @history_events = Event.where(['end_time < ?', DateTime.now])
+  end
+
+  def join
+	  @new_events = Event.where(['exp > ?', DateTime.now])
   end
 
   private
