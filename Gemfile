@@ -13,6 +13,12 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'faker'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'coffee-rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 gem 'as-duration'
 
 gem 'autoprefixer-rails'
