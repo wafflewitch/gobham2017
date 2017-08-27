@@ -9,6 +9,6 @@ $(document).ready(function() {
 		$('#login-wrapper').show();
 	});
 	$("div[data-link]").click(function() {
-		window.location = this.data("link")
+		window.location = $(this).attr("data-link")
 	});
 });
