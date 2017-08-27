@@ -1,9 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%= stylesheet_link_tag 'base' %>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <%= javascript_include_tag "signup" %>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+<body>
+
+
+<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">goBham</a>
+    </div>
+  </div>
+</nav>
+
+
+
 
 <div class="text-center">
-  <h3><%= @event.name %></h3>
+  <h1 class="pagetitle"><%= @event.name %></h1>
 </div>
+
+<div id="map" style="width: 100%; height: 300px;"></div>
+
+<div class="row invite">
+    <div class="col-lg-4"> 
+    <h3> Who is going? </h3>
+    <div class="grid2x2">
+        <div class="box box1"><div><img class="card-user avatar showavatar" src="<%= @event.user.photo %>"></div></div>
+        <div class="box box2"><div><img class="card-user avatar showavatar" src="<%= @event.user.photo %>"></div></div>
+        <div class="box box3"><div><img class="card-user avatar showavatar" src="<%= @event.user.photo %>"></div></div>
+        <div class="box box4"><div><img class="card-user avatar showavatar" src="<%= @event.user.photo %>"></div></div>
+        </div>
+    
+
+    
+
+    
+    
+    </div>
+    <div class="col-lg-4">
+
+      <div class="card-description">
+        <h3> What's going on? </h3>
+        <p><%= @event.desc %></p>
+      </div>
+      <div class="start-time">
+        <h3> When does it start?</h3>
+        <p><%= @event.start_time %></p>
+      </div>
+
+      <div class="end-time">
+        <h3> When does it end? </h3>
+        <p><%= @event.end_time %></p>
+      </div>
+    </div>
+
+
+    
+    <div class="col-lg-4">
+      <h3>Sounds good?</h3>
+      <div class=button>
+      <button type="button" class="btn btn-success">Join now!</button>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -22,3 +94,5 @@
     });
   <% end %>
 <% end %>
+</body>
+</html>

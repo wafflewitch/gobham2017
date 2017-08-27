@@ -111,4 +111,30 @@ color: gray;
 #map{
   margin-bottom: 5%;
 }
- 
+
+.pagetitle{
+  margin:5%;
+}
+
+.invite{
+  border: solid 3px #ff7c06;
+  padding: 2% 7%;
+}
+
+
+.showavatar{
+  width: 35%;
+}
+
+.btn-success{
+  padding: 5% 10%;
+}
+
+.button{
+  padding: 5% 10% 5% 5%;
+}
+
+h3{
+  font-family: oswald;
+
+}
