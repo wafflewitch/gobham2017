@@ -19,7 +19,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "https://res.cloudinary.com/wafflewitch/image/upload/v1499912601/userpic.jpg"
+    url_start = "https://res.cloudinary.com/wafflewitch/image/upload/v150003873"
+    url_end = ["6/user16.jpg", "6/user15.jpg", "6/user14.jpg", "6/user13.png", "5/user10.jpg", "5/user11.jpg", "5/user4.jpg", "5/user0.jpg", "5/user3.jpg", "5/user7.jpg", "5/user6.jpg", "5/user2.jpg"]
+    photo = url_start + url_end.sample
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
