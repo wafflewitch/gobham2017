@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :show, :dashboard, :join ] # temporarily added :index :show
+  skip_before_action :authenticate_user!, only: [ :home ]
   before_action :set_event, only: [ :show, :edit, :update, :destroy ]
-  before_action :set_user, only: [ :new, :create ] # temporarily removed :index
+  before_action :set_user, only: [ :new, :create, :index, :dashboard ]
 
   def new
     @event = Event.new
@@ -28,6 +28,15 @@ class EventsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @event[:members] << current_user[:id]
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      redirect_to root
+    end
   end
 
   def index
