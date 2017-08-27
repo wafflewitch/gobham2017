@@ -33,6 +33,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
 group :development, :test do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'

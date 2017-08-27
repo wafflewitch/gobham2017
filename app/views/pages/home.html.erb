@@ -15,36 +15,50 @@
 </div>
 
 <div class="home-login" id="login-wrapper">
- 
+
 
 	<h1 class="welcome">Welcome Home!</h1>
 	<p class="signuptext">Don't have an account? <a href="#" id="toggle-signup">Sign-up!</a></p>
 
 	<div class="row">
-            <div class="col-lg-4"></div>
+        <!--     <div class="col-lg-4"></div>
             <div class="col-lg-4">
 				<form action="POST" id="home-login-form">
-				<div class="form-group">
-					<label for="email">Email address </label>
-					
-					 <input name="email" type="text" class="form-control"  id="email" required>
-					 <br>
+  				<div class="form-group">
+  					<label for="email">Email address </label>
 
-					<div class="form-group">
-					    <label for="pwd">Password:</label>
-						<input name="password" type="password" class= "form-control" required>
-				 	</div>
-				 	<br>
+  					 <input name="email" type="text" class="form-control"  id="email" required>
+  					 <br>
 
-	  				<button type="submit" class="btn btn-default"> GoBham! </button>	
+  					<div class="form-group">
+  					    <label for="pwd">Password:</label>
+  						<input name="password" type="password" class= "form-control" required>
+  				 	</div>
+  				 	<br>
 
-				</div>
+  	  				<button type="submit" class="btn btn-default"> GoBham! </button>
+
+  				</div>
 				</form>
 	 		</div>
-	 	<div class="col-lg-4"></div>
 
+	 	<div class="col-lg-4"></div>
 	</div>
-	
+
+  <div class="row"> -->
+    <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+
+          <%= form_tag(user_session_path, method: :post, defaults: { html: { class: 'form-control' } } ) do %>
+            <%= label_tag :email %><br>
+            <%= text_field_tag "user[email]", "", required: true, autofocus: true, html: { id: 'email' } %><br><br>
+            <%= label_tag :password %><br>
+            <%= password_field_tag "user[password]", "", required: true, html: { id: 'password' } %><br><br>
+            <%= submit_tag "Log In", html: { class: "btn btn-default" } %>
+        <% end %>
+
+      </div>
+  </div>
 </div>
 
 <div class="home-signup" id="signup-wrapper" hidden>
@@ -52,32 +66,26 @@
 	<p class="signuptext"> Already a member?  <a href="#" id = "toggle-login">Log In</a></p>
 
 	<div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-				<form action="POST" id="home-signup-form">
 
-					<div class="form-group">
 
-			<label for="email"> Email address </label> 
-			<input name="email" type="text" class="form-control" id="email" required>
-			<br>
-			<label for="first-name"> First Name </label> 
-			<input name="first-name" type="text" class="form-control" id="first-name" required>
-			<br>
-			<label for="last-name"> Last Name </label> 
-			<input name="last-name" type="text" class="form-control" id="last-name">
-			<br>
-			<label for="password"> Password </label> 
-			<input type="password" name="password" class="form-control" id="password">
-			<br>
-			<label for="confirm-password"> Confirm Password </label> 
-			<input type="password" name="confirm-password" class="form-control" id="confirm-password">
-			<br>
-			<input type="submit" value="Go Bham!">
+    <div class="col-lg-4"></div>
+      <div class="col-lg-4">
 
-		</div>
-	</form>
-	</div>
+
+          <%= form_for(User.new, url: registration_path("user"), method: :post, defaults: { html: { class: 'form-control' } } ) do |f| %>
+            <%= f.label :email %><br>
+            <%= f.email_field :email, required: true, autofocus: true, html: { id: 'email' } %><br><br>
+            <%= f.label :first_name %><br>
+            <%= f.text_field :first_name, required: true, html: { id: 'first-name' } %><br><br>
+            <%= f.label :last_name %><br>
+            <%= f.text_field :last_name, required: true, html: { id: 'last-name' } %><br><br>
+            <%= f.label :password %><br>
+            <%= f.password_field :password, required: true, html: { id: 'password' } %><br><br>
+            <%= f.submit "Get started with goBham!", html: { class: "btn btn-default" } %>
+        <% end %>
+
+      </div>
+
 	<div class="col-lg-4"></div>
 </div>
 </body>
