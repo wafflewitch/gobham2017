@@ -4,30 +4,81 @@
 	<%= stylesheet_link_tag 'base' %>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<%= javascript_include_tag "signup" %>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
+
+<div class="jumbotron text-center">
+  <h2> welcome to </h2>
+  <h1>goBham</h1>
+</div>
+
 <div class="home-login" id="login-wrapper">
-	<h1>Log In</h1>
-	<p>Don't have an account? <a href="#" id="toggle-signup">Sign-up!</a></p>
-	<form action="POST" id="home-login-form">
-		Email address:<input name="email" type="text" required><br>
-		Password: <input name="password" type="password" required<br>
-		<input type="submit" value="Let's Go">
-	</form>
+ 
+
+	<h1 class="welcome">Welcome Home!</h1>
+	<p class="signuptext">Don't have an account? <a href="#" id="toggle-signup">Sign-up!</a></p>
+
+	<div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+				<form action="POST" id="home-login-form">
+				<div class="form-group">
+					<label for="email">Email address </label>
+					
+					 <input name="email" type="text" class="form-control"  id="email" required>
+					 <br>
+
+					<div class="form-group">
+					    <label for="pwd">Password:</label>
+						<input name="password" type="password" class= "form-control" required>
+				 	</div>
+				 	<br>
+
+	  				<button type="submit" class="btn btn-default"> GoBham! </button>	
+
+				</div>
+				</form>
+	 		</div>
+	 	<div class="col-lg-4"></div>
+
+	</div>
+	
 </div>
 
 <div class="home-signup" id="signup-wrapper" hidden>
-	<h1>Sign Up</h1>
-	<p><a href="#" id = "toggle-login">Log In</a></p>
-	<form action="POST" id="home-signup-form">
-		Email address:<input name="email" type="text" required><br>
-		First Name:<input name="first-name" type="text" required><br>
-		Last Name: <input name="last-name" type="text"><br>
-		Password: <input type="password" name="password"><br>
-		Confirm Password <input type="password" name="confirm-password"><br>
-		<input type="submit" value="Go Bham!">
+	<h1 class="welcome">Welcome Aboard!</h1>
+	<p class="signuptext"> Already a member?  <a href="#" id = "toggle-login">Log In</a></p>
+
+	<div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+				<form action="POST" id="home-signup-form">
+
+					<div class="form-group">
+
+			<label for="email"> Email address </label> 
+			<input name="email" type="text" class="form-control" id="email" required>
+			<br>
+			<label for="first-name"> First Name </label> 
+			<input name="first-name" type="text" class="form-control" id="first-name" required>
+			<br>
+			<label for="last-name"> Last Name </label> 
+			<input name="last-name" type="text" class="form-control" id="last-name">
+			<br>
+			<label for="password"> Password </label> 
+			<input type="password" name="password" class="form-control" id="password">
+			<br>
+			<label for="confirm-password"> Confirm Password </label> 
+			<input type="password" name="confirm-password" class="form-control" id="confirm-password">
+			<br>
+			<input type="submit" value="Go Bham!">
+
+		</div>
 	</form>
+	</div>
+	<div class="col-lg-4"></div>
 </div>
 </body>
 </html>
