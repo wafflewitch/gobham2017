@@ -31,11 +31,11 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.where.not(latitude: nil, longitude: nil)
 
-    @hash = Gmaps4rails.build_markers(@event) do |event, marker|
-        marker.lat event.latitude if !event.latitude.nil?
-        marker.lng event.longitude if !event.longitude.nil?
+    @hash = Gmaps4rails.build_markers(@events) do |event, marker|
+        marker.lat event.latitude
+        marker.lng event.longitude
     end
   end
 

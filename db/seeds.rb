@@ -8,7 +8,7 @@
 
 MEN_IMG_URL = "https://res.cloudinary.com/wafflewitch/image/upload/v1500038735/"
 
-MEN_PICS = ["user4.jpg", "user0.jpg", "user3.jpg", "user7.jpg", "user6.jpg", "user2.jpg",]
+MEN_PICS = ["user4.jpg", "user0.jpg", "user3.jpg", "user7.jpg", "user6.jpg", "user2.jpg"]
 
 WOMEN_IMG_URL = "https://res.cloudinary.com/wafflewitch/image/upload/v150003873"
 
