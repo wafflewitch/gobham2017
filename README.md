@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# goBham
+
+This is a hackathon project from Magic City Hacks 2017.
+
+Team members include:
+* Jessica Pruitt
+* Katie Ford
+* Alex Tsatsos
